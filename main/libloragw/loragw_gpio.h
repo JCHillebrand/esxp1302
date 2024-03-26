@@ -19,14 +19,14 @@ License: Revised BSD License, see LICENSE.TXT file include in the project
 #include "driver/gpio.h"
 
 #ifndef SX1302_RESET_PIN
-#define SX1302_RESET_PIN          2
+#define SX1302_RESET_PIN          41
 #endif
 
 #ifndef SX1302_POWER_EN_PIN
 #define SX1302_POWER_EN_PIN       4
 #endif
 
-#define SX1302_GPIO_PIN_SEL       ((1 << SX1302_RESET_PIN) | (1 << SX1302_POWER_EN_PIN))
+#define SX1302_GPIO_PIN_SEL       ((uint64_t)(1 << SX1302_RESET_PIN) | (uint64_t)(1 << SX1302_POWER_EN_PIN))
 
 // reset the gateway using RESET and POWER_EN GPIO Pins.
 void lgw_reset(void);
